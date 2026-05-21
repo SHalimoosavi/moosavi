@@ -59,6 +59,24 @@
         }
     </script>
     <style>
+<!-- Vapi Web Widget -->
+<script
+  src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"
+  defer
+  async
+></script>
+
+<script>
+  window.addEventListener("load", () => {
+    window.vapiSDK.run({
+      apiKey: "596fe211-937f-4504-b4c9-c01560d9e7c1",
+      assistant: "44bb203c-ef3f-4bd8-b70e-73f7f13144b4",
+      config: {
+        position: "bottom-right"
+      }
+    });
+  });
+</script>
         body {
             background-color: #020617;
             color: #e2e8f0;
