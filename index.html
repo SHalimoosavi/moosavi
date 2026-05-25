@@ -130,7 +130,6 @@
         linear-gradient(90deg, rgba(0,212,255,.025) 1px, transparent 1px);
       background-size: 64px 64px;
     }
-    /* radial vignette on grid */
     .hero-grid::after {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, var(--bg) 100%);
@@ -399,130 +398,382 @@
       content: ''; position: absolute; inset: -1px;
       border: 1px solid transparent; transition: border-color .38s; pointer-events: none;
     }
-    .proj-card:hover { transform: translateY(-4px); background: var(--bg3); }
-    .proj-card:hover::after { border-color: var(--cyan); }
+    .proj-card:hover::after { border-color: rgba(0,212,255,.25); }
     .proj-card:hover .proj-glow { opacity: 1; }
     .proj-type {
-      font-family: var(--mono); font-size: 10px; color: var(--cyan);
-      letter-spacing: .3em; text-transform: uppercase; margin-bottom: 16px;
+      font-family: var(--mono); font-size: 10px; color: var(--violet);
+      letter-spacing: .24em; text-transform: uppercase; margin-bottom: 12px;
     }
     .proj-card h3 {
-      font-family: var(--ui); font-size: 17px; font-weight: 700;
-      color: #fff; margin-bottom: 22px; line-height: 1.3;
+      font-family: var(--ui); font-size: 17px; font-weight: 700; color: #fff;
+      margin-bottom: 20px; line-height: 1.3;
     }
     .proj-lbl {
-      font-family: var(--mono); font-size: 10px; letter-spacing: .22em;
-      text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px;
+      display: block; font-family: var(--mono); font-size: 10px; color: var(--cyan);
+      letter-spacing: .22em; text-transform: uppercase; margin-bottom: 6px;
     }
     .proj-p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
     .proj-result {
-      margin-top: 18px; padding: 11px 16px;
-      background: rgba(0,212,255,.04); border-left: 2px solid var(--cyan);
-      font-size: 12px; color: var(--text); line-height: 1.65;
+      font-family: var(--mono); font-size: 12px; color: var(--green);
+      border-left: 2px solid var(--green); padding-left: 12px; margin-bottom: 20px;
     }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
-      padding: 4px 10px;
-      background: rgba(123,47,255,.1); border: 1px solid rgba(123,47,255,.3);
-      font-family: var(--mono); font-size: 11px; color: #b089ff;
+      font-family: var(--mono); font-size: 10px; color: var(--muted);
+      letter-spacing: .08em; padding: 4px 10px; border: 1px solid var(--border);
     }
 
     /* ===== GH STATS ===== */
     .gh-grid {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 40px;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+      background: var(--border); border: 1px solid var(--border); margin: 48px 0;
     }
     .gh-stat {
-      background: var(--bg2); padding: 44px 20px; text-align: center; transition: background .3s;
+      background: var(--bg2); padding: 40px 36px;
+      transition: background .3s;
     }
     .gh-stat:hover { background: var(--bg3); }
     .gh-num {
-      font-family: var(--dsp); font-size: 68px; color: #fff; line-height: 1; margin-bottom: 8px;
+      font-family: var(--dsp); font-size: 72px; color: var(--cyan);
+      line-height: 1; margin-bottom: 8px;
     }
     .gh-lbl {
       font-family: var(--mono); font-size: 11px; color: var(--muted);
-      letter-spacing: .16em; text-transform: uppercase;
+      letter-spacing: .18em; text-transform: uppercase;
     }
     .gh-link {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--mono); font-size: 13px; color: var(--cyan);
-      text-decoration: none; letter-spacing: .1em;
-      border-bottom: 1px solid rgba(0,212,255,.3); padding-bottom: 2px;
-      transition: border-color .2s;
+      font-family: var(--mono); font-size: 12px; color: var(--muted);
+      text-decoration: none; letter-spacing: .14em; border-bottom: 1px solid var(--border);
+      padding-bottom: 2px; transition: color .2s, border-color .2s;
     }
-    .gh-link:hover { border-color: var(--cyan); }
+    .gh-link:hover { color: var(--cyan); border-color: var(--cyan); }
 
     /* ===== CONTACT ===== */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
     .c-links { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
     .c-link {
-      display: flex; align-items: center; gap: 16px; padding: 18px 22px;
-      border: 1px solid var(--border); text-decoration: none; transition: all .3s;
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; padding: 16px 20px; border: 1px solid var(--border);
+      background: var(--bg2); transition: all .28s;
     }
     .c-link:hover { border-color: var(--cyan); background: var(--cyan-d); }
     .c-icon {
       width: 38px; height: 38px; border: 1px solid var(--border-h);
       display: flex; align-items: center; justify-content: center;
-      color: var(--cyan); font-size: 14px; flex-shrink: 0; font-family: var(--mono);
+      font-family: var(--mono); font-size: 14px; color: var(--cyan); flex-shrink: 0;
     }
-    .c-lbl {
-      font-family: var(--mono); font-size: 10px; color: var(--muted);
-      letter-spacing: .2em; text-transform: uppercase; margin-bottom: 2px;
-    }
-    .c-val { font-family: var(--ui); font-size: 14px; color: var(--text); font-weight: 600; }
+    .c-lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .2em; text-transform: uppercase; }
+    .c-val { font-size: 13px; color: var(--text); margin-top: 3px; }
     .c-form { display: flex; flex-direction: column; gap: 16px; }
     .fg { display: flex; flex-direction: column; gap: 6px; }
-    .fg label {
-      font-family: var(--mono); font-size: 10px; color: var(--muted);
-      letter-spacing: .22em; text-transform: uppercase;
-    }
+    .fg label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .2em; text-transform: uppercase; }
     .fg input, .fg textarea {
-      background: var(--bg2); border: 1px solid var(--border); padding: 13px 15px;
-      font-family: var(--mono); font-size: 13px; color: var(--text);
-      outline: none; transition: border-color .2s; resize: none;
+      background: var(--bg2); border: 1px solid var(--border);
+      color: var(--text); font-family: var(--mono); font-size: 13px;
+      padding: 12px 16px; outline: none; transition: border-color .2s; resize: none;
     }
     .fg input:focus, .fg textarea:focus { border-color: var(--cyan); }
-    .fg textarea { height: 120px; }
+    .fg textarea { height: 110px; }
 
     /* ===== FOOTER ===== */
     footer {
-      border-top: 1px solid var(--border); padding: 32px 48px;
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 40px 48px; display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--border); background: var(--bg2);
     }
-    footer p { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .08em; }
-    footer span { color: var(--cyan); }
+    footer p { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    footer p span { color: var(--cyan); }
     .sys-badge {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 11px; color: var(--green);
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--mono); font-size: 11px; color: var(--muted);
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== MOBILE ===== */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       .sec { padding: 80px 24px; }
       .sec-full { padding: 80px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .exp-grid { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .proj-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
       .gh-grid { grid-template-columns: repeat(2,1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .stats-row { grid-template-columns: 1fr 1fr; }
-      .stack-row { flex-direction: column; gap: 10px; }
-      .cat-lbl { min-width: auto; padding-top: 0; }
       footer { flex-direction: column; gap: 12px; text-align: center; }
+      .stack-row { flex-direction: column; gap: 12px; }
+    }
+
+    /* ════════════════════════════════════════
+       ARIA WIDGET — Ali's AI Assistant
+    ════════════════════════════════════════ */
+
+    /* Launcher */
+    #aria-launcher {
+      position: fixed; bottom: 28px; right: 28px; z-index: 10000;
+      cursor: none; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+    }
+    #aria-bubble {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, #020b14, #091628);
+      border: 1px solid rgba(0,212,255,.55);
+      box-shadow: 0 0 0 0 rgba(0,212,255,.4), 0 8px 32px rgba(0,0,0,.6);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+      animation: aria-pulse 3s ease-in-out infinite;
+      user-select: none; overflow: hidden; position: relative;
+    }
+    #aria-bubble::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50%;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(0,212,255,.3) 30%, transparent 60%);
+      animation: aria-spin 3s linear infinite;
+    }
+    @keyframes aria-spin { to { transform: rotate(360deg); } }
+    .aria-icon-svg { position: relative; z-index: 1; }
+    #aria-bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0,212,255,.35), 0 12px 40px rgba(0,0,0,.5);
+    }
+    #aria-bubble.open { transform: scale(.9) rotate(12deg); }
+    @keyframes aria-pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(0,212,255,.4), 0 8px 32px rgba(0,0,0,.6); }
+      50%      { box-shadow: 0 0 0 10px rgba(0,212,255,0), 0 8px 32px rgba(0,0,0,.6); }
+    }
+    #aria-pill {
+      background: #020b14; color: var(--cyan);
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      padding: 5px 14px; border: 1px solid rgba(0,212,255,.25);
+      white-space: nowrap; animation: aria-pill-in 1s ease 2s both;
+    }
+    @keyframes aria-pill-in {
+      from { opacity:0; transform: translateY(6px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    #aria-badge {
+      position: absolute; top: -4px; right: -4px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #ff003c; color: #fff; font-size: 10px; font-weight: 700;
+      display: none; align-items: center; justify-content: center;
+      border: 2px solid var(--bg); animation: badge-pop .3s cubic-bezier(.34,1.56,.64,1);
+    }
+    #aria-badge.show { display: flex; }
+    @keyframes badge-pop { from { transform:scale(0); } to { transform:scale(1); } }
+
+    /* Panel */
+    #aria-panel {
+      position: fixed; bottom: 106px; right: 28px; z-index: 9997;
+      width: 380px; max-width: calc(100vw - 36px);
+      height: 540px; max-height: calc(100vh - 130px);
+      background: #020b14;
+      border: 1px solid rgba(0,212,255,.18);
+      display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 0 60px rgba(0,212,255,.06), 0 28px 80px rgba(0,0,0,.8), inset 0 1px 0 rgba(0,212,255,.08);
+      transform: scale(.88) translateY(20px); opacity: 0; pointer-events: none;
+      transform-origin: bottom right;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), opacity .25s ease;
+    }
+    #aria-panel.visible { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+
+    /* Scanline effect */
+    #aria-panel::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 10;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,212,255,.012) 2px, rgba(0,212,255,.012) 4px);
+    }
+
+    /* Panel header */
+    #aria-header {
+      padding: 14px 16px 12px;
+      background: linear-gradient(180deg, rgba(0,212,255,.07) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(0,212,255,.1);
+      display: flex; align-items: center; gap: 12px; flex-shrink: 0; position: relative;
+    }
+    #aria-header::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,.4), transparent);
+    }
+    #aria-avatar-wrap { position: relative; flex-shrink: 0; }
+    #aria-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(0,212,255,.2), #020b14);
+      border: 1px solid rgba(0,212,255,.45);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px rgba(0,212,255,.15), inset 0 0 10px rgba(0,212,255,.05);
+      animation: aria-float 3s ease-in-out infinite; font-size: 20px;
+    }
+    @keyframes aria-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+    #aria-status-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green); border: 2px solid var(--bg);
+      position: absolute; bottom: 1px; right: 1px;
+      animation: pulse-g 2s infinite;
+    }
+    .aria-hname {
+      font-family: var(--mono); font-weight: 500; font-size: 14px;
+      color: var(--cyan); letter-spacing: .08em;
+    }
+    .aria-hsub {
+      font-family: var(--mono); font-size: 10px;
+      color: var(--muted); margin-top: 2px; letter-spacing: .1em;
+    }
+    #aria-state-badge {
+      font-family: var(--mono); font-size: 9px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      padding: 3px 10px; border: 1px solid rgba(0,255,136,.25);
+      color: var(--green); background: rgba(0,255,136,.07);
+      transition: all .3s; white-space: nowrap; margin-left: auto;
+    }
+
+    /* Messages */
+    #aria-messages {
+      flex: 1; overflow-y: auto; padding: 14px 14px 8px;
+      display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+    }
+    #aria-messages::-webkit-scrollbar { width: 2px; }
+    #aria-messages::-webkit-scrollbar-thumb { background: rgba(0,212,255,.15); }
+
+    .aria-empty {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px; padding: 20px; text-align: center;
+    }
+    .aria-empty-icon { font-size: 30px; }
+    .aria-empty-title {
+      font-family: var(--mono); color: rgba(0,212,255,.8);
+      font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .aria-empty-sub {
+      font-family: var(--mono); color: var(--muted);
+      font-size: 10px; line-height: 1.6; letter-spacing: .08em;
+    }
+    .aria-chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+    .aria-chip {
+      font-family: var(--mono); font-size: 10px; color: rgba(0,212,255,.7);
+      border: 1px solid rgba(0,212,255,.2); padding: 4px 12px;
+      background: rgba(0,212,255,.04); cursor: none; letter-spacing: .08em;
+      transition: all .2s;
+    }
+    .aria-chip:hover { background: rgba(0,212,255,.12); border-color: rgba(0,212,255,.5); color: var(--cyan); }
+
+    .aria-msg-row { display: flex; gap: 7px; align-items: flex-end; animation: msg-in .25s ease both; }
+    .aria-msg-row.user { flex-direction: row-reverse; }
+    @keyframes msg-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    .aria-mini-av {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,255,.15), #020b14);
+      border: 1px solid rgba(0,212,255,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; flex-shrink: 0;
+    }
+    .aria-bubble-msg { max-width: 80%; }
+    .aria-bubble-text {
+      padding: 9px 13px; font-family: var(--mono); font-size: 12px;
+      line-height: 1.6; word-break: break-word; color: var(--text);
+    }
+    .aria-msg-row.bot .aria-bubble-text {
+      background: rgba(0,212,255,.04);
+      border: 1px solid rgba(0,212,255,.12);
+      border-radius: 0 12px 12px 12px;
+    }
+    .aria-msg-row.user .aria-bubble-text {
+      background: linear-gradient(135deg, rgba(123,47,255,.35), rgba(0,212,255,.15));
+      border: 1px solid rgba(123,47,255,.3);
+      border-radius: 12px 0 12px 12px; color: #fff;
+    }
+    .aria-msg-row.end-msg .aria-bubble-text {
+      background: rgba(0,255,136,.06); border: 1px solid rgba(0,255,136,.2); color: var(--green);
+    }
+    .aria-ts {
+      font-family: var(--mono); font-size: 9px; color: var(--muted);
+      margin-top: 3px; padding: 0 3px; letter-spacing: .08em;
+    }
+    .aria-msg-row.user .aria-ts { text-align: right; }
+
+    /* Typing */
+    #aria-typing { display: none; gap: 7px; align-items: flex-end; animation: msg-in .25s ease both; }
+    #aria-typing.show { display: flex; }
+    .aria-typing-dots {
+      padding: 10px 14px;
+      background: rgba(0,212,255,.04); border: 1px solid rgba(0,212,255,.1);
+      border-radius: 0 12px 12px 12px;
+      display: flex; gap: 4px; align-items: center;
+    }
+    .aria-dot {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--cyan);
+      animation: dot-b 1.2s ease-in-out infinite;
+    }
+    .aria-dot:nth-child(2) { animation-delay: .2s; }
+    .aria-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes dot-b { 0%,80%,100% { transform:translateY(0); opacity:.3; } 40% { transform:translateY(-5px); opacity:1; } }
+
+    /* Wave */
+    #aria-wave {
+      padding: 4px 14px 0; display: none; gap: 2px;
+      align-items: center; justify-content: center; height: 26px; flex-shrink: 0;
+    }
+    #aria-wave.show { display: flex; }
+    .aria-bar { width: 2px; border-radius: 1px; background: rgba(0,212,255,.4); transition: height .09s ease; }
+
+    /* Footer */
+    #aria-footer {
+      padding: 10px 12px 14px;
+      border-top: 1px solid rgba(0,212,255,.08);
+      background: rgba(0,0,0,.3); flex-shrink: 0;
+    }
+    #aria-start-btn {
+      width: 100%; padding: 12px;
+      background: linear-gradient(135deg, rgba(0,212,255,.15), rgba(0,212,255,.08));
+      border: 1px solid rgba(0,212,255,.3);
+      font-family: var(--mono); font-weight: 500; font-size: 12px;
+      color: var(--cyan); cursor: none; letter-spacing: .18em; text-transform: uppercase;
+      transition: all .25s; box-shadow: 0 0 20px rgba(0,212,255,.08);
+    }
+    #aria-start-btn:hover { background: rgba(0,212,255,.2); box-shadow: 0 0 30px rgba(0,212,255,.15); border-color: var(--cyan); }
+
+    #aria-input-row { display: none; gap: 7px; align-items: flex-end; }
+    #aria-input-row.show { display: flex; }
+    #aria-input {
+      flex: 1; padding: 10px 13px;
+      background: rgba(0,212,255,.04); border: 1px solid rgba(0,212,255,.15);
+      color: var(--text); font-family: var(--mono); font-size: 12px;
+      resize: none; line-height: 1.5; transition: border-color .2s; letter-spacing: .04em;
+    }
+    #aria-input::placeholder { color: var(--muted); }
+    #aria-input:focus { outline: none; border-color: rgba(0,212,255,.45); }
+    #aria-send-btn {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,.25), rgba(123,47,255,.2));
+      border: 1px solid rgba(0,212,255,.3); color: var(--cyan);
+      font-size: 14px; cursor: none;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .2s;
+    }
+    #aria-send-btn:hover { background: rgba(0,212,255,.3); box-shadow: 0 0 20px rgba(0,212,255,.2); }
+    #aria-send-btn:disabled { opacity: .3; cursor: default; }
+
+    #aria-end-row { display: none; justify-content: space-between; align-items: center; margin-top: 7px; }
+    #aria-end-row.show { display: flex; }
+    .aria-hint { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: .1em; }
+    #aria-end-btn {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      padding: 4px 12px; background: rgba(255,0,60,.08);
+      border: 1px solid rgba(255,0,60,.2); color: #ff003c; cursor: none;
+      transition: background .2s; letter-spacing: .12em; text-transform: uppercase;
+    }
+    #aria-end-btn:hover { background: rgba(255,0,60,.16); }
+
+    @media (max-width: 600px) {
+      #aria-panel { width: calc(100vw - 20px); right: 10px; bottom: 96px; }
+      #aria-launcher { right: 16px; bottom: 20px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Cursor -->
 <div id="c-dot"></div>
 <div id="c-ring"></div>
 
-<!-- ===== NAVIGATION ===== -->
+<!-- ===== NAV ===== -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><em>&lt;</em>SAHM<em>/&gt;</em></a>
+  <a href="#hero" class="nav-logo">S<em>.</em>A<em>.</em>H<em>.</em>M</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
@@ -532,7 +783,7 @@
   </ul>
   <div class="nav-badge">
     <div class="badge-dot"></div>
-    Available
+    <span>Available for Work</span>
   </div>
 </nav>
 
@@ -546,91 +797,105 @@
       Syed Ali<br>
       <span class="gx" data-t="Moosavi">Moosavi</span>
     </h1>
-    <p class="hero-role">
-      <strong>Blockchain</strong> &amp; AI Operations
-    </p>
+    <div class="hero-role"><strong>Blockchain</strong> &amp; AI Operations Specialist</div>
     <p class="hero-desc">
-      I design, build, and operate automation-first systems that reduce manual effort,
-      improve reliability, and scale operations across support, fintech, and Web3.
+      I build automation-first systems that scale — from intelligent workflows and AI agents to blockchain operations and CI/CD pipelines.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn btn-p">View Projects</a>
-      <a href="#contact" class="btn btn-s">Get in Touch</a>
+      <a href="#contact" class="btn btn-p">Start a Project →</a>
+      <a href="#projects" class="btn btn-s">View Systems</a>
     </div>
   </div>
   <div class="hero-loc">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    Hyderabad, India
+    <span>◈</span>
+    <span>Hyderabad, India</span>
   </div>
   <div class="scroll-ind">
-    <span>Scroll</span>
     <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
 <div class="hdiv"></div>
 
 <!-- ===== ABOUT ===== -->
-<div class="sec" id="about">
+<section class="sec" id="about">
+  <div class="lbl rev">About</div>
+  <h2 class="ttl rev">Building Systems<br>That Think.</h2>
   <div class="about-grid">
-    <div>
-      <div class="lbl rev">About Me</div>
-      <h2 class="ttl rev">Execution<br>over noise.</h2>
-      <div class="about-text rev d1">
-        <p>I specialize in turning <strong>complex, manual processes</strong> into stable, automated systems. My background spans customer operations, dispatch systems, CRM workflows, and crypto operations — where reliability and response time matter more than theory.</p>
-        <p>I work hands-on with automation platforms, APIs, and orchestration tools to ship systems that <strong>actually run in production</strong>. I care about clean interfaces, measurable outcomes, and designs that operators can understand and maintain.</p>
-      </div>
+    <div class="about-text">
+      <p class="rev">
+        I'm <strong>Syed Ali Hasan Moosavi</strong> — an Automation Engineer with <strong>8+ years of experience</strong> across quality assurance, operations management, customer success, freight dispatch, AI automation consulting, and network support. I've worked internationally in Qatar and Saudi Arabia.
+      </p>
+      <p class="rev d1">
+        My focus is on designing <strong>automation-first systems</strong> that reduce manual overhead and create predictable, scalable operations. I combine deep operational knowledge with modern tooling to build workflows that actually hold up in production.
+      </p>
+      <p class="rev d2">
+        Whether it's an AI-assisted support system, a blockchain operations layer, or a fully automated CI/CD pipeline — I approach every project with the goal of making complexity disappear for the people running it.
+      </p>
       <div class="stats-row">
+        <div class="stat-box rev d1">
+          <div class="stat-num">8+</div>
+          <div class="stat-lbl">Years Experience</div>
+        </div>
         <div class="stat-box rev d2">
-          <div class="stat-num" data-count="50">0</div>
-          <div class="stat-lbl">Workflows Automated</div>
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Countries</div>
         </div>
         <div class="stat-box rev d3">
-          <div class="stat-num" data-count="99">0</div>
-          <div class="stat-lbl">% Uptime Target</div>
+          <div class="stat-num">4</div>
+          <div class="stat-lbl">Core Domains</div>
+        </div>
+        <div class="stat-box rev d4">
+          <div class="stat-num">∞</div>
+          <div class="stat-lbl">Automations Built</div>
         </div>
       </div>
     </div>
-    <div class="pillars rev d2">
-      <div class="pillar">
-        <h4>⚡ Automation-First Mindset</h4>
-        <p>Every repetitive task is a candidate for automation. I identify bottlenecks and eliminate them systematically.</p>
+    <div class="pillars">
+      <div class="pillar rev">
+        <h4>Automation-First Mindset</h4>
+        <p>Every manual process is a liability. I design systems where the exception is human intervention, not the rule.</p>
       </div>
-      <div class="pillar">
-        <h4>🔧 Production-Ready Systems</h4>
-        <p>I build for operators. Clean interfaces, clear logs, and failure recovery built-in from day one.</p>
+      <div class="pillar rev d1">
+        <h4>Operations Experience</h4>
+        <p>8+ years managing real operations across multiple industries and geographies — I understand what breaks at scale.</p>
       </div>
-      <div class="pillar">
-        <h4>📊 Measurable Outcomes</h4>
-        <p>I track what matters: reduced processing time, fewer errors, faster response times, and happier teams.</p>
+      <div class="pillar rev d2">
+        <h4>AI & Emerging Tech</h4>
+        <p>From AI agents to blockchain infrastructure — I stay at the intersection of what's possible and what's practical.</p>
+      </div>
+      <div class="pillar rev d3">
+        <h4>End-to-End Ownership</h4>
+        <p>I don't hand off half-finished systems. I own the outcome from architecture to deployment to monitoring.</p>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Marquee -->
-<div class="mq-wrap">
-  <div class="mq-track" id="mq">
-    <span class="mq-item">n8n</span><span class="mq-item ac">·</span>
-    <span class="mq-item">GitHub Actions</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Web3</span><span class="mq-item ac">·</span>
-    <span class="mq-item">REST APIs</span><span class="mq-item ac">·</span>
-    <span class="mq-item">AI Agents</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Blockchain</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Node.js</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Python</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Automation</span><span class="mq-item ac">·</span>
-    <span class="mq-item">n8n</span><span class="mq-item ac">·</span>
-    <span class="mq-item">GitHub Actions</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Web3</span><span class="mq-item ac">·</span>
-    <span class="mq-item">REST APIs</span><span class="mq-item ac">·</span>
-    <span class="mq-item">AI Agents</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Blockchain</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Node.js</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Python</span><span class="mq-item ac">·</span>
-    <span class="mq-item">Automation</span><span class="mq-item ac">·</span>
+  <!-- MARQUEE -->
+  <div class="mq-wrap">
+    <div class="mq-track" id="mq">
+      <span class="mq-item">n8n</span><span class="mq-item ac">·</span>
+      <span class="mq-item">GitHub Actions</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Web3</span><span class="mq-item ac">·</span>
+      <span class="mq-item">REST APIs</span><span class="mq-item ac">·</span>
+      <span class="mq-item">AI Agents</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Blockchain</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Node.js</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Python</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Automation</span><span class="mq-item ac">·</span>
+      <span class="mq-item">n8n</span><span class="mq-item ac">·</span>
+      <span class="mq-item">GitHub Actions</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Web3</span><span class="mq-item ac">·</span>
+      <span class="mq-item">REST APIs</span><span class="mq-item ac">·</span>
+      <span class="mq-item">AI Agents</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Blockchain</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Node.js</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Python</span><span class="mq-item ac">·</span>
+      <span class="mq-item">Automation</span><span class="mq-item ac">·</span>
+    </div>
   </div>
-</div>
+</section>
 
 <div class="hdiv"></div>
 
@@ -894,6 +1159,93 @@
   </div>
 </footer>
 
+
+<!-- ════════════════════════════════════════════════
+     ARIA — AI Assistant Widget
+     Ali's Responsive Intelligence Assistant
+════════════════════════════════════════════════ -->
+
+<!-- Launcher -->
+<div id="aria-launcher" onclick="ariaToggle()">
+  <div id="aria-pill">CHAT WITH ARIA</div>
+  <div style="position:relative">
+    <div id="aria-bubble">
+      <svg class="aria-icon-svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="6" stroke="#00d4ff" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="2.5" fill="#00d4ff"/>
+        <line x1="14" y1="2" x2="14" y2="7" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="14" y1="21" x2="14" y2="26" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="2" y1="14" x2="7" y2="14" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="21" y1="14" x2="26" y2="14" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="5.5" y1="5.5" x2="9" y2="9" stroke="#00d4ff" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+        <line x1="19" y1="19" x2="22.5" y2="22.5" stroke="#00d4ff" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+        <line x1="22.5" y1="5.5" x2="19" y2="9" stroke="#00d4ff" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+        <line x1="9" y1="19" x2="5.5" y2="22.5" stroke="#00d4ff" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+      </svg>
+    </div>
+    <div id="aria-badge">1</div>
+  </div>
+</div>
+
+<!-- Chat Panel -->
+<div id="aria-panel">
+  <!-- Header -->
+  <div id="aria-header">
+    <div id="aria-avatar-wrap">
+      <div id="aria-avatar">◈</div>
+      <div id="aria-status-dot"></div>
+    </div>
+    <div style="flex:1">
+      <div class="aria-hname">ARIA</div>
+      <div class="aria-hsub">Ali's AI Assistant · Portfolio</div>
+    </div>
+    <div id="aria-state-badge">Online</div>
+  </div>
+
+  <!-- Wave -->
+  <div id="aria-wave"></div>
+
+  <!-- Messages -->
+  <div id="aria-messages">
+    <div class="aria-empty" id="aria-empty">
+      <div class="aria-empty-icon">◈</div>
+      <div class="aria-empty-title">ARIA · Online</div>
+      <div class="aria-empty-sub">AI assistant for<br>Syed Ali Hasan Moosavi</div>
+      <div class="aria-chips">
+        <div class="aria-chip" onclick="ariaQuickMsg('What services do you offer?')">Services</div>
+        <div class="aria-chip" onclick="ariaQuickMsg('Tell me about your AI & automation work')">AI Work</div>
+        <div class="aria-chip" onclick="ariaQuickMsg('I want to start a project')">Start Project</div>
+        <div class="aria-chip" onclick="ariaQuickMsg('What is your experience with blockchain?')">Blockchain</div>
+        <div class="aria-chip" onclick="ariaQuickMsg('How much do you charge?')">Pricing</div>
+      </div>
+    </div>
+    <div id="aria-typing">
+      <div class="aria-mini-av">◈</div>
+      <div class="aria-typing-dots">
+        <div class="aria-dot"></div>
+        <div class="aria-dot"></div>
+        <div class="aria-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="aria-footer">
+    <button id="aria-start-btn" onclick="ariaStartChat()">◈ &nbsp;Initialize Conversation</button>
+    <div id="aria-input-row">
+      <textarea id="aria-input" placeholder="Type your message…" rows="1"
+        oninput="ariaAutoResize(this)"
+        onkeydown="ariaKeyDown(event)"></textarea>
+      <button id="aria-send-btn" onclick="ariaSend()">➤</button>
+    </div>
+    <div id="aria-end-row">
+      <span class="aria-hint">Enter to send · Shift+Enter new line</span>
+      <button id="aria-end-btn" onclick="ariaEndChat()">✕ End</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SCRIPTS ════ -->
 <script>
 // ===== CURSOR =====
 const dot = document.getElementById('c-dot');
@@ -910,8 +1262,8 @@ document.addEventListener('mousemove', e => {
 })();
 
 // ===== NAV SCROLL =====
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>navEl.classList.toggle('scrolled',scrollY>40));
 
 // ===== PARTICLE CANVAS =====
 const cvs=document.getElementById('hero-canvas');
@@ -942,7 +1294,6 @@ pts.forEach(p=>p.max=p.life);
     ctx.fillStyle=`rgba(0,212,255,${fa})`;
     ctx.fill();
   });
-  // connections
   for(let i=0;i<pts.length;i++){
     for(let j=i+1;j<pts.length;j++){
       const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
@@ -1007,5 +1358,310 @@ document.querySelectorAll('.proj-card').forEach(card=>{
   });
 });
 </script>
+
+<!-- ════ ARIA WIDGET SCRIPT ════ -->
+<script>
+(function () {
+
+  /* ── ARIA SYSTEM PROMPT ── All of Ali's details ── */
+  const SYSTEM_PROMPT = `You are ARIA (Ali's Responsive Intelligence Assistant), the professional AI assistant embedded in the personal portfolio of Syed Ali Hasan Moosavi.
+
+IDENTITY: You ARE Ali's assistant. Speak as if you are his personal representative. Refer to Ali in third person ("Ali can help you with...", "He has worked on..."). You are knowledgeable, sharp, confident, and technically fluent — matching Ali's cyberpunk engineer brand.
+
+TONE: Professional but conversational. Keep responses concise (2-4 sentences unless detail is needed). No fluff. Solution-oriented. Build trust and enthusiasm for working with Ali.
+
+ABOUT ALI:
+- Full name: Syed Ali Hasan Moosavi
+- Based in: Hyderabad, India
+- Experience: 8+ years across quality assurance, operations management, customer success, freight dispatch, AI automation consulting, and network support
+- International experience: Qatar and Saudi Arabia
+- Currently: Freelance Automation Engineer & AI Consultant
+- GitHub: github.com/shalimoosavi
+- LinkedIn: linkedin.com/in/syed-ali-hasan-moosavi-237734378/
+- Email: shalimoosavi@gmail.com
+- Status: Available for new projects
+
+CORE SERVICES Ali offers:
+1. AI & Intelligent Automation — AI agents, chatbot deployment, AI-assisted pipelines, human-in-the-loop systems
+2. Workflow Automation — n8n workflows, GitHub Actions CI/CD, API integration, webhook-driven systems, process optimization
+3. Blockchain & Crypto Operations — Token operations, wallet infrastructure, Web3 integrations, on/off-chain coordination, operational security
+4. Ops & Support Systems — Dispatch and scheduling systems, CRM workflows, SLA tracking, incident response, escalation logic, operational analytics
+5. AI Consulting — Helping businesses identify automation opportunities and implement AI-first systems
+6. Web Development — Full-stack web applications, landing pages, dashboards (Next.js, React, Node.js)
+7. DevOps & CI/CD — Automated pipelines, deployment automation, monitoring systems
+
+TECH STACK Ali uses:
+- Languages: JavaScript, Python, SQL
+- Automation: n8n, GitHub Actions, webhooks, REST APIs
+- AI: AI agents, LLM integrations, Claude/OpenAI APIs, automation pipelines
+- Blockchain: Web3 tooling, wallet infrastructure, smart contract operations
+- Tools: Node.js, GitHub, Postman, FFmpeg, Linux, CRM platforms
+- Frameworks: React, Next.js (for web projects)
+
+KEY PROJECTS:
+1. Automation-First Operations Platform — n8n + APIs for multi-region ops (dispatch, reporting, notifications); reduced manual workload significantly
+2. AI-Assisted Support Workflow — AI chat triage with escalation logic and CRM integration; faster first-response times
+3. Blockchain Token Operations System — Token handling, monitoring, wallet integrations; reliable auditable crypto ops
+4. CI/CD Automation with GitHub Actions — Automated pipelines for validation, builds, deployments; cleaner release cycles
+5. B2B SaaS AI Platform — Full concept for Indian SMBs covering GST invoicing, WhatsApp CRM, hiring workflows
+6. Ace Livestock Farms website — Premium Next.js 14 build with 3D effects, glassmorphism, WhatsApp checkout
+
+WHY WORK WITH ALI:
+- 8+ years of real operational experience — he understands what breaks at scale
+- Automation-first mindset — treats manual processes as liabilities to eliminate
+- End-to-end ownership — from architecture to deployment to monitoring, no handoffs
+- International exposure — worked across India, Qatar, Saudi Arabia
+- Fast delivery — experienced freelancer with proven track record
+- Versatile — can handle both technical engineering and operational consulting
+
+LEAD QUALIFICATION: When someone expresses interest in working with Ali, naturally gather:
+- What type of project/service they need
+- Are they an individual, startup, or established company?
+- What problem are they trying to solve?
+- Timeline (urgent <2 weeks, normal 1-2 months, flexible)
+- Budget range (if they ask about pricing)
+One question at a time. Don't interrogate — have a natural conversation.
+
+PRICING GUIDANCE (when asked):
+- Be honest that pricing depends on scope and complexity
+- Suggest they email Ali at shalimoosavi@gmail.com for a detailed quote
+- Mention Ali is open to discussing both project-based and retainer arrangements
+- Say something like: "Ali tailors pricing to the project — the best move is to reach out directly with your requirements."
+
+LEAD CAPTURE: When someone is clearly interested in starting a project, collect:
+- Their name
+- Email or preferred contact method
+- Brief project description
+Then confirm: "I'll make sure Ali has your details. You can also reach him directly at shalimoosavi@gmail.com"
+
+OBJECTION HANDLING:
+- "Too expensive" → "Ali is flexible and works with different budgets — tell me more about what you're building and he can suggest the right approach."
+- "Need to think about it" → "Absolutely, no pressure. Would it help if I gave you Ali's email so you can reach out when you're ready?"
+- "I need it done fast" → "Ali is experienced with fast turnarounds — especially for automation projects. What's your timeline?"
+- "I'm not technical" → "That's fine — Ali explains things clearly and handles all the technical complexity. Your job is to describe the problem, his job is to solve it."
+
+CLOSING MESSAGES:
+- After collecting leads: "I've noted your details. Ali will be in touch — or you can email him directly at shalimoosavi@gmail.com. Looking forward to building something great together! ◈"
+
+RULES:
+- One question at a time
+- Never make up specific pricing numbers
+- Always encourage them to reach out directly for quotes
+- Keep Ali's brand: technical, precise, automation-first, no-nonsense
+- If you don't know something specific, say "Ali would know best — reach out at shalimoosavi@gmail.com"
+
+OPENING: "System online. I'm ARIA — Ali's AI assistant. Whether you want to explore his work, discuss a project idea, or figure out if he's the right fit for what you need — I'm here. What's on your mind?"`;
+
+  let panelOpen = false;
+  let chatActive = false;
+  let isLoading = false;
+  let unreadCount = 0;
+  let waveInterval, waveAnimating = false;
+  let chatHistory = [];
+
+  const $ = id => document.getElementById(id);
+
+  /* Wave bars */
+  const waveEl = $('aria-wave');
+  for (let i = 0; i < 16; i++) {
+    const b = document.createElement('div');
+    b.className = 'aria-bar';
+    b.style.height = '3px';
+    waveEl.appendChild(b);
+  }
+  const waveBars = waveEl.querySelectorAll('.aria-bar');
+
+  function animateWave(color) {
+    waveBars.forEach(b => b.style.background = color || 'rgba(0,212,255,0.4)');
+    waveEl.classList.add('show');
+    waveAnimating = true;
+    clearInterval(waveInterval);
+    waveInterval = setInterval(() => {
+      waveBars.forEach(b => {
+        b.style.height = (Math.random() * 18 + 3) + 'px';
+      });
+    }, 90);
+  }
+
+  function stopWave() {
+    waveAnimating = false;
+    clearInterval(waveInterval);
+    waveBars.forEach(b => b.style.height = '3px');
+    waveEl.classList.remove('show');
+  }
+
+  function setBadge(n) {
+    const el = $('aria-badge');
+    if (n > 0) { el.textContent = n > 9 ? '9+' : n; el.classList.add('show'); }
+    else el.classList.remove('show');
+  }
+
+  function setStateBadge(text, color, border) {
+    const el = $('aria-state-badge');
+    el.textContent = text;
+    el.style.color = color;
+    el.style.borderColor = border || color;
+    el.style.background = 'rgba(0,0,0,0)';
+    if (color === '#00ff88') {
+      el.style.background = 'rgba(0,255,136,.07)';
+      el.style.borderColor = 'rgba(0,255,136,.25)';
+    } else if (color === '#00d4ff') {
+      el.style.background = 'rgba(0,212,255,.07)';
+      el.style.borderColor = 'rgba(0,212,255,.25)';
+    } else if (color === '#f59e0b') {
+      el.style.background = 'rgba(245,158,11,.07)';
+      el.style.borderColor = 'rgba(245,158,11,.25)';
+    }
+  }
+
+  function nowTime() {
+    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function addMessage(role, text, isEnd) {
+    const emptyEl = $('aria-empty');
+    if (emptyEl) emptyEl.style.display = 'none';
+
+    const row = document.createElement('div');
+    row.className = 'aria-msg-row ' + (role === 'user' ? 'user' : 'bot') + (isEnd ? ' end-msg' : '');
+
+    if (role === 'assistant') {
+      const av = document.createElement('div');
+      av.className = 'aria-mini-av';
+      av.textContent = '◈';
+      row.appendChild(av);
+    }
+
+    const wrap = document.createElement('div'); wrap.className = 'aria-bubble-msg';
+    const bubble = document.createElement('div'); bubble.className = 'aria-bubble-text';
+    bubble.textContent = text;
+    const ts = document.createElement('div'); ts.className = 'aria-ts'; ts.textContent = nowTime();
+    wrap.appendChild(bubble); wrap.appendChild(ts);
+    row.appendChild(wrap);
+
+    const msgs = $('aria-messages');
+    msgs.insertBefore(row, $('aria-typing'));
+    msgs.scrollTop = msgs.scrollHeight;
+
+    if (role === 'assistant' && !panelOpen) {
+      unreadCount++;
+      setBadge(unreadCount);
+    }
+  }
+
+  function showTyping() {
+    $('aria-typing').classList.add('show');
+    $('aria-messages').scrollTop = $('aria-messages').scrollHeight;
+    animateWave('rgba(0,212,255,0.35)');
+    setStateBadge('Processing…', '#00d4ff');
+  }
+
+  function hideTyping() {
+    $('aria-typing').classList.remove('show');
+    stopWave();
+  }
+
+  async function callARIA(userText) {
+    if (isLoading) return;
+    isLoading = true;
+
+    chatHistory.push({ role: 'user', content: userText });
+    addMessage('user', userText);
+    showTyping();
+    $('aria-send-btn').disabled = true;
+
+    try {
+      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: SYSTEM_PROMPT,
+          messages: chatHistory
+        })
+      });
+      const data = await resp.json();
+      const reply = data.content?.[0]?.text || 'I\'m having trouble connecting right now. Please try again.';
+      chatHistory.push({ role: 'assistant', content: reply });
+      hideTyping();
+      setTimeout(() => {
+        addMessage('assistant', reply);
+        animateWave('rgba(0,255,136,0.3)');
+        setStateBadge('Online', '#00ff88');
+        setTimeout(stopWave, 1500);
+      }, 200);
+    } catch (e) {
+      hideTyping();
+      addMessage('assistant', 'Connection interrupted. You can also reach Ali directly at shalimoosavi@gmail.com');
+      setStateBadge('Online', '#00ff88');
+    } finally {
+      isLoading = false;
+      $('aria-send-btn').disabled = false;
+    }
+  }
+
+  /* ── Public API ── */
+  window.ariaToggle = function () {
+    panelOpen = !panelOpen;
+    $('aria-panel').classList.toggle('visible', panelOpen);
+    $('aria-bubble').classList.toggle('open', panelOpen);
+    $('aria-pill').style.display = panelOpen ? 'none' : '';
+    if (panelOpen) { unreadCount = 0; setBadge(0); }
+  };
+
+  window.ariaStartChat = function () {
+    chatActive = true;
+    $('aria-start-btn').style.display = 'none';
+    $('aria-input-row').classList.add('show');
+    $('aria-end-row').classList.add('show');
+    setStateBadge('Online', '#00ff88');
+
+    const greeting = 'System online. I\'m ARIA — Ali\'s AI assistant. Whether you want to explore his work, discuss a project idea, or figure out if he\'s the right fit for what you need — I\'m here. What\'s on your mind?';
+    chatHistory = [{ role: 'assistant', content: greeting }];
+    addMessage('assistant', greeting);
+    setTimeout(() => $('aria-input').focus(), 100);
+  };
+
+  window.ariaEndChat = function () {
+    addMessage('assistant', 'Session closed. If you\'d like to connect with Ali directly — shalimoosavi@gmail.com. ◈', true);
+    chatHistory = [];
+    chatActive = false;
+    $('aria-input-row').classList.remove('show');
+    $('aria-end-row').classList.remove('show');
+    $('aria-start-btn').style.display = '';
+    setStateBadge('Offline', '#4a6880');
+  };
+
+  window.ariaSend = function () {
+    const input = $('aria-input');
+    const text = input.value.trim();
+    if (!text || isLoading) return;
+    input.value = ''; input.style.height = 'auto';
+    callARIA(text);
+  };
+
+  window.ariaKeyDown = function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ariaSend(); }
+  };
+
+  window.ariaAutoResize = function (el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 90) + 'px';
+  };
+
+  window.ariaQuickMsg = function (text) {
+    ariaStartChat();
+    setTimeout(() => callARIA(text), 500);
+  };
+
+  /* Auto-show badge after 5s */
+  setTimeout(() => {
+    if (!panelOpen) { unreadCount = 1; setBadge(1); }
+  }, 5000);
+
+})();
+</script>
+
 </body>
 </html>
