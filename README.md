@@ -65,7 +65,7 @@ I work hands-on with automation platforms, APIs, and orchestration tools to ship
 
 **Tools**
 - GitHub
-- REST APIs
+- REST API
 - Webhooks
 - Postman
 - FFmpeg (automation use cases)
