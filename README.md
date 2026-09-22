@@ -1,120 +1,38 @@
-# Syed Ali Hasan Moosavi
+# Moosavi Lab — Founder Portfolio v2
 
-**Automation Engineer | Blockchain & AI Operations | Systems & DevOps Practitioner**
-Hyderabad, India
+A static, GitHub Pages-ready portfolio for **Syed Ali Hasan Moosavi**.
 
-I design, build, and operate automation-first systems that reduce manual effort, improve reliability, and scale operations across support, fintech, and Web3 environments. My work sits at the intersection of workflow automation, blockchain operations, and intelligent systems — focused on execution, not noise.
+## What is included
 
----
+- Founder-first positioning
+- Flagship engineering projects and case-study pages
+- System map / ecosystem visualization
+- Building-in-public timeline
+- Open-source archive
+- AI / LLM / SaaS / blockchain / OSINT / mobile project coverage
+- Responsive, mobile-first design
+- Reduced-motion support
+- Accessible skip link, semantic sections and keyboard-friendly disclosure panels
+- SEO title and description architecture
+- Canonical URLs
+- Open Graph and Twitter metadata
+- ProfilePage, Person and Organization structured data on the homepage
+- SoftwareSourceCode structured data on project pages
+- Sitemap and robots.txt
+- GitHub Pages 404 page
+- PWA manifest and favicon
+- No build system or npm dependency required
 
-## About Me
+## Deploy
 
-I specialize in turning complex, manual processes into stable, automated systems. My background spans customer operations, dispatch systems, CRM workflows, and crypto operations, where reliability, observability, and response time matter more than theory.
+Upload the contents of this directory to the `main` branch of the GitHub Pages repository and publish from the branch root (or adapt the existing Actions workflow).
 
-I work hands-on with automation platforms, APIs, and orchestration tools to ship systems that actually run in production. I care about clean interfaces, measurable outcomes, and designs that operators can understand and maintain.
+The expected live URL is:
 
----
+`https://shalimoosavi.github.io/moosavi/`
 
-## Core Expertise
+## Important
 
-**Automation & Workflow Systems**
-- n8n workflow design and orchestration
-- GitHub Actions for CI/CD and automation
-- API integration and webhook-driven systems
-- Process optimization and failure recovery
+Before publishing, verify project descriptions, repository URLs and any project status claims against the current repositories. The site deliberately labels early-stage projects as early-stage rather than presenting roadmap items as shipped functionality.
 
-**Blockchain & Crypto Operations**
-- Layer-1 blockchain design and implementation (consensus, wallets, transactions)
-- Token operations and lifecycle management
-- Wallet infrastructure and transaction flows
-- Web3 integrations and on-chain/off-chain coordination
-- Operational security and monitoring (high level)
-
-**AI & Intelligent Automation**
-- AI agents for support and ops workflows
-- Chatbot deployment and orchestration
-- AI-assisted automation pipelines
-- Human-in-the-loop system design
-
-**Ops & Support Systems**
-- Dispatch and scheduling systems
-- CRM workflows and SLA tracking
-- Incident response and escalation logic
-- Operational analytics and reporting
-
-**Programming & Tools**
-- Backend scripting for automation and integration
-- Data handling and reporting pipelines
-- Tooling to glue systems together reliably
-
----
-
-## Tech Stack
-
-**Languages**
-- Python
-- JavaScript
-- SQL
-
-**Frameworks / Platforms**
-- n8n
-- FastAPI
-- Node.js
-- Web3 tooling
-- CRM platforms
-
-**Tools**
-- GitHub
-- REST API
-- Webhooks
-- Postman
-- FFmpeg (automation use cases)
-
-**Cloud / DevOps**
-- GitHub Actions
-- Linux / Android (Termux) environments
-- Deployment and environment management
-- Monitoring and logging fundamentals
-
----
-
-## Highlighted Projects
-
-### SAYANJALI BLOCKCHAIN
-**Problem:** The SYJ ecosystem needed a settlement layer it fully controls — not a token contract inheriting another chain's fee markets and governance.
-**Solution:** Built an independent Layer-1 blockchain from scratch — Proof-of-Work consensus, ECDSA wallets, signed transactions, persistent storage, REST API, and CLI.
-**Tech:** Python, FastAPI, SQLAlchemy, ECDSA/SECP256k1
-**Outcome:** MVP shipped (`v0.1.0-mvp`) with 37 passing tests; P2P networking and smart contracts are next.
-
-### Automation-First Operations Platform
-**Problem:** High manual workload and slow turnaround in multi-region operations.
-**Solution:** Designed end-to-end workflows using n8n and API integrations to automate dispatch, reporting, and notifications.
-**Tech:** n8n, REST APIs, Webhooks, GitHub
-**Outcome:** Reduced manual processing time and improved operational consistency across regions.
-
-### AI-Assisted Support Workflow
-**Problem:** Delayed response times and inconsistent customer support handling.
-**Solution:** Implemented AI-driven chat and triage flows with escalation logic and CRM integration.
-**Tech:** AI agents, APIs, CRM workflows
-**Outcome:** Faster first-response handling and more predictable support operations.
-
-### CI/CD Automation with GitHub Actions
-**Problem:** Manual deployment and inconsistent build processes.
-**Solution:** Introduced automated pipelines for validation, builds, and controlled deployments.
-**Tech:** GitHub Actions, scripting
-**Outcome:** Cleaner release cycles and reduced deployment errors.
-
----
-
-## GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=SHalimoosavi&show_icons=false&hide_title=true)
-
----
-
-## Contact & Presence
-
-- Email: shalimoosavi@gmail.com
-- GitHub: https://github.com/SHalimoosavi
-- LinkedIn: https://www.linkedin.com/in/syed-ali-hasan-moosavi-237734378/
-- Portfolio: https://shalimoosavi.github.io/moosavi/
+After deployment, submit `sitemap.xml` in Google Search Console and use URL Inspection on the homepage and flagship project URLs. Google recommends validating structured data and using URL Inspection after deployment.

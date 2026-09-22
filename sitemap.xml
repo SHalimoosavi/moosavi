@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<url><loc>https://shalimoosavi.github.io/moosavi/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-llm.html</loc><priority>0.9</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-ai.html</loc><priority>0.9</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-blockchain.html</loc><priority>0.9</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/nexusintel-ai.html</loc><priority>0.8</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/opentrade.html</loc><priority>0.8</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-osint.html</loc><priority>0.8</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/nexusrank-ai.html</loc><priority>0.8</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/scholar-ai.html</loc><priority>0.7</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/quickstock.html</loc><priority>0.7</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/ai-arena.html</loc><priority>0.7</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/devxchange.html</loc><priority>0.6</priority></url>
+<url><loc>https://shalimoosavi.github.io/moosavi/projects/mobile-lab.html</loc><priority>0.6</priority></url>
 </urlset>
