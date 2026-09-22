@@ -1,38 +1,25 @@
-# Moosavi Lab — Founder Portfolio v2
+# Moosavi Lab — Portfolio V3
 
-A static, GitHub Pages-ready portfolio for **Syed Ali Hasan Moosavi**.
+Production-ready static portfolio for Syed Ali Hasan Moosavi.
 
-## What is included
+## V3 goals
+- Premium responsive experience for phone, tablet and desktop.
+- Senior technical-founder positioning.
+- Project-specific case studies and architecture evidence.
+- Local Open Graph/Twitter images for reliable sharing.
+- ProfilePage, Person, Organization, SoftwareSourceCode and BreadcrumbList structured data.
+- Canonical URLs, sitemap and robots.txt.
+- Accessible mobile navigation with keyboard/Escape support and visible focus states.
+- Reduced-motion support and lightweight vanilla HTML/CSS/JS architecture.
+- Single GitHub Pages deployment workflow with static link-integrity validation.
+- No invented metrics or placeholder project claims.
 
-- Founder-first positioning
-- Flagship engineering projects and case-study pages
-- System map / ecosystem visualization
-- Building-in-public timeline
-- Open-source archive
-- AI / LLM / SaaS / blockchain / OSINT / mobile project coverage
-- Responsive, mobile-first design
-- Reduced-motion support
-- Accessible skip link, semantic sections and keyboard-friendly disclosure panels
-- SEO title and description architecture
-- Canonical URLs
-- Open Graph and Twitter metadata
-- ProfilePage, Person and Organization structured data on the homepage
-- SoftwareSourceCode structured data on project pages
-- Sitemap and robots.txt
-- GitHub Pages 404 page
-- PWA manifest and favicon
-- No build system or npm dependency required
+## Local preview
+Use any static server, for example:
+`python3 -m http.server 8000`
 
-## Deploy
+Then open:
+`http://localhost:8000/`
 
-Upload the contents of this directory to the `main` branch of the GitHub Pages repository and publish from the branch root (or adapt the existing Actions workflow).
-
-The expected live URL is:
-
-`https://shalimoosavi.github.io/moosavi/`
-
-## Important
-
-Before publishing, verify project descriptions, repository URLs and any project status claims against the current repositories. The site deliberately labels early-stage projects as early-stage rather than presenting roadmap items as shipped functionality.
-
-After deployment, submit `sitemap.xml` in Google Search Console and use URL Inspection on the homepage and flagship project URLs. Google recommends validating structured data and using URL Inspection after deployment.
+## Deployment
+GitHub Pages can deploy the repository root with `.github/workflows/pages.yml`.

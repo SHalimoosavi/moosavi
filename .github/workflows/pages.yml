@@ -1,15 +1,15 @@
-name: Deploy portfolio to GitHub Pages
+name: Deploy static portfolio to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: false
 jobs:
   deploy:
     environment:
@@ -17,10 +17,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate static site
+        shell: bash
+        run: |
+          test -f index.html
+          test -f 404.html
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f assets/css/styles.css
+          test -f assets/js/app.js
+          test "$(find projects -name '*.html' | wc -l)" -eq 12
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path(".")
+          html=[root/"index.html",root/"404.html",*sorted((root/"projects").glob("*.html"))]
+          for f in html:
+              s=f.read_text(encoding="utf-8")
+              for href in re.findall(r'href=["\']([^"\']+)["\']',s):
+                  if href.startswith(("http://","https://","#","mailto:","javascript:")): continue
+                  target=(f.parent/href.split("#")[0]).resolve()
+                  if not target.exists():
+                      raise SystemExit(f"Broken local link: {f} -> {href}")
+          print("Static link integrity: OK")
+          PY
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .
-      - id: deployment
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
