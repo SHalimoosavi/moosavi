@@ -111,3 +111,106 @@ footer strong{display:block;color:var(--text);font:700 11px ui-monospace,SFMono-
 }
 @media(pointer:coarse){.cursor-glow{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.orbit{animation:none}.button,.card{transition:none}}
+
+
+/* ============================================================
+   CERTIFICATIONS / CREDENTIALS
+   ============================================================ */
+
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.cert{
+  background:var(--panel);
+  min-height:190px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:30px;
+  transition:.25s ease;
+}
+
+.cert:hover{
+  background:#111814;
+  transform:translateY(-2px);
+}
+
+.cert-issuer{
+  display:block;
+  color:var(--accent);
+  font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;
+  margin-bottom:18px;
+}
+
+.cert h3{
+  font-size:clamp(24px,3vw,38px);
+  margin:0 0 10px;
+}
+
+.cert p{
+  color:var(--muted);
+  margin:0;
+  font-size:13px;
+}
+
+.cert-date{
+  color:var(--dim);
+  font:700 9px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.1em;
+}
+
+.cert-source{
+  margin-top:20px;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  gap:14px;
+  align-items:center;
+}
+
+.cert-source span{
+  color:var(--accent);
+  font:700 9px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;
+}
+
+.cert-source a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:750;
+}
+
+.cert-source small{
+  color:var(--dim);
+  font-size:11px;
+}
+
+@media(max-width:900px){
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cert-source{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .cert{
+    min-height:170px;
+    padding:20px;
+  }
+
+  .cert h3{
+    font-size:25px;
+  }
+}
