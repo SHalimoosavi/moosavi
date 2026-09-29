@@ -28,19 +28,55 @@ jobs:
           test -f sitemap.xml
           test -f assets/css/styles.css
           test -f assets/js/app.js
-          test "$(find projects -name '*.html' | wc -l)" -eq 12
+          project_count="$(find projects -maxdepth 1 -type f -name '*.html' | wc -l)"
+          test "$project_count" -eq 16
+          echo "Project page count: $project_count"
           python3 - <<'PY'
           from pathlib import Path
           import re
-          root=Path(".")
-          html=[root/"index.html",root/"404.html",*sorted((root/"projects").glob("*.html"))]
+
+          root = Path(".").resolve()
+          pages_base = "/moosavi/"
+
+          html = [
+              root / "index.html",
+              root / "404.html",
+              *sorted((root / "projects").glob("*.html")),
+          ]
+
           for f in html:
-              s=f.read_text(encoding="utf-8")
-              for href in re.findall(r'href=["\']([^"\']+)["\']',s):
-                  if href.startswith(("http://","https://","#","mailto:","javascript:")): continue
-                  target=(f.parent/href.split("#")[0]).resolve()
+              s = f.read_text(encoding="utf-8")
+
+              for href in re.findall(r'href=["\']([^"\']+)["\']', s):
+                  if href.startswith((
+                      "http://",
+                      "https://",
+                      "#",
+                      "mailto:",
+                      "javascript:",
+                  )):
+                      continue
+
+                  clean = href.split("#", 1)[0]
+
+                  if not clean:
+                      continue
+
+                  # GitHub Pages site-root URL.
+                  if clean.startswith(pages_base):
+                      relative = clean[len(pages_base):]
+                      target = (root / relative).resolve()
+                  elif clean.startswith("/"):
+                      # Other absolute URLs are external/site-root routes.
+                      continue
+                  else:
+                      target = (f.parent / clean).resolve()
+
                   if not target.exists():
-                      raise SystemExit(f"Broken local link: {f} -> {href}")
+                      raise SystemExit(
+                          f"Broken local link: {f} -> {href}"
+                      )
+
           print("Static link integrity: OK")
           PY
       - name: Setup Pages
