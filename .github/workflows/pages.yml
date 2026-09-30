@@ -41,6 +41,7 @@ jobs:
           html = [
               root / "index.html",
               root / "404.html",
+              root / "about.html",
               *sorted((root / "projects").glob("*.html")),
           ]
 

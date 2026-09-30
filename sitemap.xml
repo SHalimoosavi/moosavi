@@ -1,89 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
->
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/scholar-ai.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/syj-ai.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-blockchain.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/nexusintel-ai.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-osint.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/opentrade.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/devxchange.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/ai-arena.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/mobile-lab.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/quickstock.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/syj-llm.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/nexusrank-ai.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/syj-edgemind.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/syj-mine.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/logistics-fabric.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://shalimoosavi.github.io/moosavi/projects/nexus-sentinel-audit.html</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://shalimoosavi.github.io/moosavi/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/about.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/ai-arena.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/devxchange.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/logistics-fabric.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/mobile-lab.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/nexus-sentinel-audit.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/nexusintel-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/nexusrank-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/opentrade.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/quickstock.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-blockchain.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/sayanjali-osint.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/scholar-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-ai.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-edgemind.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-llm.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shalimoosavi.github.io/moosavi/projects/syj-mine.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
