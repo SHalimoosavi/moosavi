@@ -52,8 +52,19 @@
     });
   };
 
+  let pendingNavTarget = null;
+
   const updateActiveNav = () => {
     const activationLine = 110;
+    if (pendingNavTarget) {
+      const rect = pendingNavTarget.target.getBoundingClientRect();
+      if (rect.bottom > activationLine) {
+        setActiveNav(pendingNavTarget.link);
+        if (rect.top <= activationLine) pendingNavTarget = null;
+        return;
+      }
+      pendingNavTarget = null;
+    }
     const active = navTargets.find(item => {
       const rect = item.target.getBoundingClientRect();
       return rect.top <= activationLine && rect.bottom > activationLine;
@@ -71,8 +82,13 @@
   const syncNavFromHash = () => {
     const targetId = window.location.hash.slice(1);
     const match = navTargets.find(item => item.target.id === targetId);
-    if (match) setActiveNav(match.link);
-    else updateActiveNav();
+    if (match) {
+      pendingNavTarget = match;
+      setActiveNav(match.link);
+    } else {
+      pendingNavTarget = null;
+      updateActiveNav();
+    }
   };
 
   if (navTargets.length && 'IntersectionObserver' in window) {
