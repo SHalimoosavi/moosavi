@@ -52,25 +52,38 @@
     });
   };
 
+  const updateActiveNav = () => {
+    const activationLine = 110;
+    const active = navTargets.find(item => {
+      const rect = item.target.getBoundingClientRect();
+      return rect.top <= activationLine && rect.bottom > activationLine;
+    });
+    if (active) {
+      setActiveNav(active.link);
+      return;
+    }
+
+    const previous = navTargets.filter(item => item.target.getBoundingClientRect().top <= activationLine).at(-1);
+    if (previous) setActiveNav(previous.link);
+    else setActiveNav(null);
+  };
+
   const syncNavFromHash = () => {
     const targetId = window.location.hash.slice(1);
     const match = navTargets.find(item => item.target.id === targetId);
     if (match) setActiveNav(match.link);
+    else updateActiveNav();
   };
 
   if (navTargets.length && 'IntersectionObserver' in window) {
-    const navObserver = new IntersectionObserver(entries => {
-      const visible = entries
-        .filter(entry => entry.isIntersecting)
-        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible.length) {
-        const active = navTargets.find(item => item.target === visible[0].target);
-        if (active) setActiveNav(active.link);
-      } else if (window.scrollY < navTargets[0].target.offsetTop - 76) {
-        setActiveNav(null);
-      }
-    }, {rootMargin: '-76px 0px -55% 0px', threshold: 0});
+    const navObserver = new IntersectionObserver(updateActiveNav, {
+      rootMargin: '-100px 0px -85% 0px',
+      threshold: 0
+    });
     navTargets.forEach(item => navObserver.observe(item.target));
+    window.addEventListener('scroll', updateActiveNav, {passive: true});
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
   }
 
   window.addEventListener('hashchange', syncNavFromHash);
