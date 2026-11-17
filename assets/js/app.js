@@ -53,17 +53,29 @@
   };
 
   let pendingNavTarget = null;
+  let previousScrollY = window.scrollY;
 
   const updateActiveNav = () => {
     const activationLine = 110;
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > previousScrollY;
+    const scrollingUp = currentScrollY < previousScrollY;
+    previousScrollY = currentScrollY;
+
     if (pendingNavTarget) {
       const rect = pendingNavTarget.target.getBoundingClientRect();
-      if (rect.bottom > activationLine) {
+      if (rect.bottom <= activationLine || (scrollingUp && rect.top > activationLine)) {
+        pendingNavTarget = null;
+      } else if (rect.top <= activationLine) {
         setActiveNav(pendingNavTarget.link);
-        if (rect.top <= activationLine) pendingNavTarget = null;
+        pendingNavTarget = null;
         return;
+      } else if (!scrollingUp) {
+        setActiveNav(pendingNavTarget.link);
+        return;
+      } else {
+        pendingNavTarget = null;
       }
-      pendingNavTarget = null;
     }
     const active = navTargets.find(item => {
       const rect = item.target.getBoundingClientRect();
