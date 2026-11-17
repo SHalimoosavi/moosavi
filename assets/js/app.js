@@ -40,6 +40,43 @@
     items.forEach(el => { el.classList.add('visible'); el.style.transitionDelay = '0ms'; });
   }
 
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const navTargets = navLinks
+    .map(link => ({link, target: document.getElementById(link.getAttribute('href').slice(1))}))
+    .filter(item => item.target);
+
+  const setActiveNav = (activeLink) => {
+    navLinks.forEach(link => {
+      if (link === activeLink) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  const syncNavFromHash = () => {
+    const targetId = window.location.hash.slice(1);
+    const match = navTargets.find(item => item.target.id === targetId);
+    if (match) setActiveNav(match.link);
+  };
+
+  if (navTargets.length && 'IntersectionObserver' in window) {
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length) {
+        const active = navTargets.find(item => item.target === visible[0].target);
+        if (active) setActiveNav(active.link);
+      } else if (window.scrollY < navTargets[0].target.offsetTop - 76) {
+        setActiveNav(null);
+      }
+    }, {rootMargin: '-76px 0px -55% 0px', threshold: 0});
+    navTargets.forEach(item => navObserver.observe(item.target));
+  }
+
+  window.addEventListener('hashchange', syncNavFromHash);
+  window.addEventListener('popstate', syncNavFromHash);
+  if (window.location.hash) syncNavFromHash();
+
   const glow = document.querySelector('.cursor-glow');
   if (glow && !prefersReducedMotion && matchMedia('(pointer:fine)').matches) {
     window.addEventListener('pointermove', e => {
